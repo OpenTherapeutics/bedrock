@@ -1,4 +1,5 @@
 import pytest
+from bedrock import dictutils
 
 class TestDictUtils:
 
@@ -28,4 +29,18 @@ class TestDictUtils:
             'spanish inquisition': 'nobody expects'
         }
 
-        # TODO finish test
+        result = dictutils.overlay(DEFAULT_CONFIG, partial)
+        assert result == {
+            'birds': {
+                'parrots': {
+                    'alive': 1,
+                    'dead': ['demised', 'kicked the bucket', 'is no more']
+                },
+                'swallows': {'african': 'migratory', 'european': -1}},
+                'foo': 'baz',
+                'spam': {
+                    'bacon': 'spam spam eggs and spam',
+                    'eggs': 'sausage and spam'
+                },
+                'spanish inquisition': 'nobody expects'
+            }
