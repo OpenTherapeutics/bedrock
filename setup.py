@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-
 import os
+import sys
 import codecs
-
 from setuptools import setup, find_packages
 
 
@@ -16,6 +15,11 @@ def read(*files):
     for f in files:
         content += codecs.open(os.path.join(HERE, f), 'r').read()
     return content
+
+
+if sys.argv[-1] == 'publish':
+    os.system('python setup.py sdist upload')
+    sys.exit(0)
 
 
 setup(

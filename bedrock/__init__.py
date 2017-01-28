@@ -1,8 +1,3 @@
-'''
-Yet another collection of seemingly essential Python features and utilities for
-building non-trivial applications
-
-'''
 VERSION = (0, 1, 0)
 
 
