@@ -7,15 +7,13 @@ from setuptools import setup, find_packages
 
 app = __import__('bedrock')
 VERSION = app.get_version()
-DESCRIPTION = app.__doc__
-HERE = os.path.dirname(__file__)
+DESCRIPTION = 'Yet another collection of seemingly essential Python features and utilities for building non-trivial applications'
 
 def read(*files):
-    content = ''
-    for f in files:
-        content += codecs.open(os.path.join(HERE, f), 'r').read()
-    return content
-
+    return '\n'.join(
+        codecs.open(os.path.join(os.path.dirname(__file__), f), 'r').read()
+        for f in files    
+    )
 
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
@@ -33,15 +31,18 @@ setup(
     platforms=['any'],
     license='MIT License',
     classifiers=[
-        'Environment :: Web Environment',
-        'Framework :: Django',
+        'Environment :: OpenStack',
         'License :: OSI Approved :: MIT License',
+        'Development Status :: 3 - Alpha',
+        'Intended Audience :: Developers',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
+        'Topic :: Utilities',
+        'Topic :: Software Development :: Libraries :: Python Modules',
     ],
     packages=find_packages(),
     include_package_data=True,
     package_data={'': ['*.rst'],},
-    #install_requires=read("requirements/base.txt"),
+    install_requires=['six'],
 )
