@@ -13,7 +13,7 @@ def _deep_update(d, u):
 
 def overlay(base, partial=None):
     '''
-    Condisering `base` as a declarative pseudo-schema dict, iterate over `partial`
+    Considering `base` as a declarative pseudo-schema dict, iterate over `partial`
     hierarchically augmenting a deepcopy of `base`. 
 
     Different from `collections.Chainmap` and various other `MergeDict` packages
