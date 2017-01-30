@@ -10,6 +10,8 @@ Welcome to bedrock's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   dictutils
+   strutils
 
 
 Indices and tables
